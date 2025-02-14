@@ -1,4 +1,4 @@
-import 'package:dashboard/utils/app_funcation/app_function.dart';
+import 'package:dashboard/core/utils/app_function.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
