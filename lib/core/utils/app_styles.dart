@@ -9,6 +9,13 @@ abstract class AppStyles {
     );
   }
 
+  static TextStyle f16w600(context) {
+    return TextStyle(
+      fontSize: AppFunction.getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle f18w600(context) {
     return TextStyle(
       fontSize: AppFunction.getResponsiveFontSize(context, fontSize: 18),
