@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_colors.dart';
 import '../../core/utils/app_styles.dart';
+import '../../models/all_expenses_model.dart';
 
 class ActiveAllExpensesItem extends StatelessWidget {
-  const ActiveAllExpensesItem({super.key});
+  const ActiveAllExpensesItem({
+    super.key,
+    required this.allExpensesModel,
+  });
+
+  final AllExpensesModel allExpensesModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class ActiveAllExpensesItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: Color(0xffF1F1F1),
@@ -35,41 +40,48 @@ class ActiveAllExpensesItem extends StatelessWidget {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                          color: Color(0xffFAFAFA),
+                          color: Color(0xffFAFAFA).withOpacity(.10),
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           )),
-                      child:
-                          Center(child: SvgPicture.asset(Assets.cardReceive))),
+                      child: Center(
+                          child: SvgPicture.asset(
+                        colorFilter: ColorFilter.mode(
+                          Colors.white,
+                          BlendMode.srcIn,
+                        ),
+                        allExpensesModel.image,
+                      ))),
                   Transform.rotate(
                       angle: -3.14159,
                       child: Icon(
-                          color: AppColors.secondColor,
-                          Icons.arrow_back_ios_new_outlined))
+                        color: Colors.white,
+                        Icons.arrow_back_ios_new_outlined,
+                      ))
                 ],
               ),
               Text(
-                "Income",
+                allExpensesModel.title,
                 style: AppStyles.f16w600(context).copyWith(
-                  color: AppColors.secondColor,
+                  color: Colors.white,
                 ),
               ),
               SizedBox(
                 height: 8,
               ),
               Text(
-                "April 2022",
+                allExpensesModel.date,
                 style: AppStyles.f14w400(context).copyWith(
-                  color: AppColors.lightGrey,
+                  color: Colors.white,
                 ),
               ),
               SizedBox(
                 height: 8,
               ),
               Text(
-                "\$20.129",
+                allExpensesModel.price,
                 style: AppStyles.f24w600(context).copyWith(
-                  color: AppColors.primaryColor,
+                  color: Colors.white,
                 ),
               ),
             ],

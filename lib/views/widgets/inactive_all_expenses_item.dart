@@ -1,12 +1,17 @@
+import 'package:dashboard/models/all_expenses_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_colors.dart';
 import '../../core/utils/app_styles.dart';
 
 class InactiveAllExpensesItem extends StatelessWidget {
-  const InactiveAllExpensesItem({super.key});
+  const InactiveAllExpensesItem({
+    super.key,
+    required this.allExpensesModel,
+  });
+
+  final AllExpensesModel allExpensesModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class InactiveAllExpensesItem extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: AppColors.primaryColor,
+              color: Color(0xffF1F1F1),
               width: 1,
             )),
         child: Padding(
@@ -39,8 +44,10 @@ class InactiveAllExpensesItem extends StatelessWidget {
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           )),
-                      child:
-                          Center(child: SvgPicture.asset(Assets.cardReceive))),
+                      child: Center(
+                          child: SvgPicture.asset(
+                        allExpensesModel.image,
+                      ))),
                   Transform.rotate(
                       angle: -3.14159,
                       child: Icon(
@@ -49,27 +56,27 @@ class InactiveAllExpensesItem extends StatelessWidget {
                 ],
               ),
               Text(
-                "Income",
+                allExpensesModel.title,
                 style: AppStyles.f16w600(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.secondColor,
                 ),
               ),
               SizedBox(
                 height: 8,
               ),
               Text(
-                "April 2022",
+                allExpensesModel.date,
                 style: AppStyles.f14w400(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.lightGrey,
                 ),
               ),
               SizedBox(
                 height: 8,
               ),
               Text(
-                "\$20.129",
+                allExpensesModel.price,
                 style: AppStyles.f24w600(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.primaryColor,
                 ),
               ),
             ],

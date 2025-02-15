@@ -1,9 +1,5 @@
-import 'package:dashboard/core/utils/app_assets.dart';
-import 'package:dashboard/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/utils/app_colors.dart';
 import 'all_expenses_header_item.dart';
 import 'all_expenses_items_list.dart';
 
