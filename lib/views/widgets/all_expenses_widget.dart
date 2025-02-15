@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/utils/app_colors.dart';
 import 'all_expenses_header_item.dart';
+import 'all_expenses_items_list.dart';
 
 class AllExpensesWidget extends StatelessWidget {
   const AllExpensesWidget({super.key});
@@ -26,29 +27,7 @@ class AllExpensesWidget extends StatelessWidget {
           SizedBox(
             height: 28,
           ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Color(0xffF1F1F1),
-                  width: 1,
-                )),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    SvgPicture.asset(Assets.cardReceive),
-                    Transform.rotate(
-                        angle: -3.14159,
-                        child: Icon(
-                            color: AppColors.secondColor,
-                            Icons.arrow_back_ios_new_outlined))
-                  ],
-                )
-              ],
-            ),
-          )
+          AllExpensesItemsList(),
         ]),
       ),
     );
