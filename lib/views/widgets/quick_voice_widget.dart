@@ -1,9 +1,6 @@
-import 'package:dashboard/core/utils/app_assets.dart';
-import 'package:dashboard/views/widgets/user_info_item.dart';
+import 'package:dashboard/views/widgets/latest_transaction_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_colors.dart';
-import '../../core/utils/app_styles.dart';
 import 'quick_voice_headers.dart';
 
 class QuickVoiceWidget extends StatelessWidget {
@@ -28,7 +25,7 @@ class QuickVoiceWidget extends StatelessWidget {
             SizedBox(
               height: 28,
             ),
-            
+            LatestTransactionWidget()
           ],
         ),
       ),
