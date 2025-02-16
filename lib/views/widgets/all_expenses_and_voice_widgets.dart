@@ -1,6 +1,3 @@
-import 'package:dashboard/core/utils/app_colors.dart';
-import 'package:dashboard/core/utils/app_styles.dart';
-import 'package:dashboard/views/widgets/quick_voice_headers.dart';
 import 'package:dashboard/views/widgets/quick_voice_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -12,14 +9,16 @@ class AllExpensesAndVoiceWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          AllExpensesWidget(),
-          SizedBox(
-            height: 20,
-          ),
-          QuickVoiceWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            AllExpensesWidget(),
+            SizedBox(
+              height: 20,
+            ),
+            QuickVoiceWidget(),
+          ],
+        ),
       ),
     );
   }

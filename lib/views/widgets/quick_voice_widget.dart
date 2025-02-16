@@ -1,10 +1,21 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:dashboard/views/widgets/custom_button.dart';
+import 'package:dashboard/views/widgets/custom_text_field.dart';
 import 'package:dashboard/views/widgets/latest_transaction_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'quick_voice_headers.dart';
 
-class QuickVoiceWidget extends StatelessWidget {
+class QuickVoiceWidget extends StatefulWidget {
   const QuickVoiceWidget({super.key});
+
+  @override
+  State<QuickVoiceWidget> createState() => _QuickVoiceWidgetState();
+}
+
+class _QuickVoiceWidgetState extends State<QuickVoiceWidget> {
+  String selectedButton = "";
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +33,71 @@ class QuickVoiceWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             QuickVoiceheaders(),
-            SizedBox(
-              height: 28,
+            const SizedBox(height: 28),
+            LatestTransactionWidget(),
+            Row(
+              children: [
+                Expanded(
+                  child: CustomTextField(
+                    hintText: "Type customer name",
+                    text: 'Customer name',
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: CustomTextField(
+                    hintText: "Type customer email",
+                    text: 'Customer Email',
+                  ),
+                ),
+              ],
             ),
-            LatestTransactionWidget()
+            const SizedBox(height: 25),
+            Row(
+              children: [
+                Expanded(
+                  child: CustomTextField(
+                    hintText: "Type customer name",
+                    text: 'Item name',
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: CustomTextField(
+                    hintText: "USD",
+                    text: 'Item amount',
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedButton = "addMore";
+                    });
+                  },
+                  child: CustomButton(
+                    text: "Add more details",
+                    isActive: selectedButton == "addMore",
+                  ),
+                ),
+                const SizedBox(width: 15),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedButton = "sendMoney";
+                    });
+                  },
+                  child: CustomButton(
+                    text: "Send Money",
+                    isActive: selectedButton == "sendMoney",
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

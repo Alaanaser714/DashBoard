@@ -1,10 +1,8 @@
 import 'package:dashboard/views/widgets/latest_transaction_list_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_colors.dart';
 import '../../core/utils/app_styles.dart';
-import 'user_info_item.dart';
 
 class LatestTransactionWidget extends StatelessWidget {
   const LatestTransactionWidget({super.key});
@@ -22,7 +20,10 @@ class LatestTransactionWidget extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        LatestTransactionlistView()
+        LatestTransactionlistView(),
+        SizedBox(
+          height: 20,
+        ),
       ],
     );
   }
