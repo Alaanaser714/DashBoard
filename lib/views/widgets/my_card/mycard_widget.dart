@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/utils/app_assets.dart';
-import '../../core/utils/app_styles.dart';
+import '../../../core/utils/app_assets.dart';
+import '../../../core/utils/app_styles.dart';
 
 class MycardWidget extends StatelessWidget {
   const MycardWidget({super.key});

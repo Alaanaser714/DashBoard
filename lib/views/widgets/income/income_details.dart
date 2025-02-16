@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../models/item_details_model.dart';
+import '../../../models/item_details_model.dart';
 import 'item_details.dart';
 
 class IncomeDetails extends StatelessWidget {

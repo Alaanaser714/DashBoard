@@ -2,7 +2,7 @@
 
 import 'package:dashboard/views/widgets/custom_button.dart';
 import 'package:dashboard/views/widgets/custom_text_field.dart';
-import 'package:dashboard/views/widgets/latest_transaction_widget.dart';
+import 'package:dashboard/views/widgets/transaction/latest_transaction_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'quick_voice_headers.dart';

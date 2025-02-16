@@ -1,12 +1,12 @@
+import 'package:dashboard/models/all_expenses_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/utils/app_colors.dart';
-import '../../core/utils/app_styles.dart';
-import '../../models/all_expenses_model.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/utils/app_styles.dart';
 
-class ActiveAllExpensesItem extends StatelessWidget {
-  const ActiveAllExpensesItem({
+class InactiveAllExpensesItem extends StatelessWidget {
+  const InactiveAllExpensesItem({
     super.key,
     required this.allExpensesModel,
   });
@@ -19,7 +19,7 @@ class ActiveAllExpensesItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         decoration: BoxDecoration(
-            color: AppColors.primaryColor,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: Color(0xffF1F1F1),
@@ -40,30 +40,25 @@ class ActiveAllExpensesItem extends StatelessWidget {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                          color: Color(0xffFAFAFA).withOpacity(.10),
+                          color: Color(0xffFAFAFA),
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
                           )),
                       child: Center(
                           child: SvgPicture.asset(
-                        colorFilter: ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
-                        ),
                         allExpensesModel.image,
                       ))),
                   Transform.rotate(
                       angle: -3.14159,
                       child: Icon(
-                        color: Colors.white,
-                        Icons.arrow_back_ios_new_outlined,
-                      ))
+                          color: AppColors.secondColor,
+                          Icons.arrow_back_ios_new_outlined))
                 ],
               ),
               Text(
                 allExpensesModel.title,
                 style: AppStyles.f16w600(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.secondColor,
                 ),
               ),
               SizedBox(
@@ -72,7 +67,7 @@ class ActiveAllExpensesItem extends StatelessWidget {
               Text(
                 allExpensesModel.date,
                 style: AppStyles.f14w400(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.lightGrey,
                 ),
               ),
               SizedBox(
@@ -81,7 +76,7 @@ class ActiveAllExpensesItem extends StatelessWidget {
               Text(
                 allExpensesModel.price,
                 style: AppStyles.f24w600(context).copyWith(
-                  color: Colors.white,
+                  color: AppColors.primaryColor,
                 ),
               ),
             ],

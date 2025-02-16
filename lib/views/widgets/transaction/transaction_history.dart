@@ -1,9 +1,9 @@
 import 'package:dashboard/models/transaction_model.dart';
-import 'package:dashboard/views/widgets/transaction_card.dart';
+import 'package:dashboard/views/widgets/transaction/transaction_card.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_colors.dart';
-import '../../core/utils/app_styles.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/utils/app_styles.dart';
 
 class TransactionHistory extends StatelessWidget {
   const TransactionHistory({super.key});

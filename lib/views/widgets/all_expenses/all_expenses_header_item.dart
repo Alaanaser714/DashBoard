@@ -1,7 +1,7 @@
 import 'package:dashboard/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_styles.dart';
+import '../../../core/utils/app_styles.dart';
 
 class AllExpensesHeaderItem extends StatelessWidget {
   const AllExpensesHeaderItem({super.key});

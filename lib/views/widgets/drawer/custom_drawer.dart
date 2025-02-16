@@ -1,11 +1,11 @@
-import 'package:dashboard/views/widgets/in_active_drawer.dart';
+import 'package:dashboard/views/widgets/drawer/in_active_drawer.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_assets.dart';
-import '../../models/drawer_item_model.dart';
-import '../../models/user_info_model.dart';
+import '../../../core/utils/app_assets.dart';
+import '../../../models/drawer_item_model.dart';
+import '../../../models/user_info_model.dart';
 import 'drawer_list_item.dart';
-import 'user_info_item.dart';
+import '../user_info_item.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

@@ -1,6 +1,6 @@
-import 'package:dashboard/views/widgets/all_expenses_and_voice_widgets.dart';
-import 'package:dashboard/views/widgets/custom_drawer.dart';
-import 'package:dashboard/views/widgets/my_card_section.dart';
+import 'package:dashboard/views/widgets/all_expenses/all_expenses_and_voice_widgets.dart';
+import 'package:dashboard/views/widgets/drawer/custom_drawer.dart';
+import 'package:dashboard/views/widgets/my_card/my_card_section.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
