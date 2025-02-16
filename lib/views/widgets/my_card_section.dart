@@ -4,6 +4,7 @@ import 'package:dashboard/core/utils/app_colors.dart';
 import 'package:dashboard/views/widgets/dots_list.dart';
 import 'package:dashboard/views/widgets/my_card_page_view.dart';
 import '../../core/utils/app_styles.dart';
+import 'transaction_history.dart';
 
 class MyCardSection extends StatefulWidget {
   const MyCardSection({super.key});
@@ -69,9 +70,17 @@ class _MyCardSectionState extends State<MyCardSection> {
             MyCardsPageView(pageController: pageController),
             const SizedBox(height: 10),
             DotsList(currentPageIndex: currentPageIndex),
+            const SizedBox(height: 10),
+            Divider(
+              height: 2,
+            ),
+            const SizedBox(height: 10),
+            TransactionHistory()
           ],
         ),
       ),
     );
   }
 }
+
+

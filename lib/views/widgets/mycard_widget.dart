@@ -49,9 +49,7 @@ class MycardWidget extends StatelessWidget {
                   SvgPicture.asset(Assets.wallet),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              Spacer(),
 
               /// رقم البطاقة وتاريخ الانتهاء
               Column(
