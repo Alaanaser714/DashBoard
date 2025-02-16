@@ -1,5 +1,6 @@
 import 'package:dashboard/views/widgets/all_expenses_and_voice_widgets.dart';
 import 'package:dashboard/views/widgets/custom_drawer.dart';
+import 'package:dashboard/views/widgets/my_card_section.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -21,6 +22,13 @@ class DesktopLayout extends StatelessWidget {
           flex: 2,
           child: AllExpensesAndVoiceWidgets(),
         ),
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(
+          flex: 1,
+          child: MyCardSection(),
+        )
       ],
     ));
   }
