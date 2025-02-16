@@ -1,9 +1,12 @@
 import 'dart:async';
+import 'package:dashboard/views/widgets/all_expenses_header_item.dart';
+import 'package:dashboard/views/widgets/income_header.dart';
 import 'package:flutter/material.dart';
 import 'package:dashboard/core/utils/app_colors.dart';
 import 'package:dashboard/views/widgets/dots_list.dart';
 import 'package:dashboard/views/widgets/my_card_page_view.dart';
 import '../../core/utils/app_styles.dart';
+import 'income_section.dart';
 import 'transaction_history.dart';
 
 class MyCardSection extends StatefulWidget {
@@ -51,36 +54,42 @@ class _MyCardSectionState extends State<MyCardSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "My Card",
-              style: AppStyles.f20w600(context)
-                  .copyWith(color: AppColors.secondColor),
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "My Card",
+                  style: AppStyles.f20w600(context)
+                      .copyWith(color: AppColors.secondColor),
+                ),
+                const SizedBox(height: 10),
+                MyCardsPageView(pageController: pageController),
+                const SizedBox(height: 10),
+                DotsList(currentPageIndex: currentPageIndex),
+                const SizedBox(height: 10),
+                Divider(
+                  height: 2,
+                ),
+                const SizedBox(height: 10),
+                TransactionHistory()
+              ],
             ),
-            const SizedBox(height: 10),
-            MyCardsPageView(pageController: pageController),
-            const SizedBox(height: 10),
-            DotsList(currentPageIndex: currentPageIndex),
-            const SizedBox(height: 10),
-            Divider(
-              height: 2,
-            ),
-            const SizedBox(height: 10),
-            TransactionHistory()
-          ],
+          ),
         ),
-      ),
+        SizedBox(
+          height: 20,
+        ),
+        IncomeSection()
+      ],
     );
   }
 }
-
-
