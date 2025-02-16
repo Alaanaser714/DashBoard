@@ -73,27 +73,31 @@ class _QuickVoiceWidgetState extends State<QuickVoiceWidget> {
             const SizedBox(height: 20),
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedButton = "addMore";
-                    });
-                  },
-                  child: CustomButton(
-                    text: "Add more details",
-                    isActive: selectedButton == "addMore",
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedButton = "addMore";
+                      });
+                    },
+                    child: CustomButton(
+                      text: "Add more details",
+                      isActive: selectedButton == "addMore",
+                    ),
                   ),
                 ),
                 const SizedBox(width: 15),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedButton = "sendMoney";
-                    });
-                  },
-                  child: CustomButton(
-                    text: "Send Money",
-                    isActive: selectedButton == "sendMoney",
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedButton = "sendMoney";
+                      });
+                    },
+                    child: CustomButton(
+                      text: "Send Money",
+                      isActive: selectedButton == "sendMoney",
+                    ),
                   ),
                 ),
               ],
