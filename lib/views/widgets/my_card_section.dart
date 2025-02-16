@@ -54,42 +54,44 @@ class _MyCardSectionState extends State<MyCardSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "My Card",
-                  style: AppStyles.f20w600(context)
-                      .copyWith(color: AppColors.secondColor),
-                ),
-                const SizedBox(height: 10),
-                MyCardsPageView(pageController: pageController),
-                const SizedBox(height: 10),
-                DotsList(currentPageIndex: currentPageIndex),
-                const SizedBox(height: 10),
-                Divider(
-                  height: 2,
-                ),
-                const SizedBox(height: 10),
-                TransactionHistory()
-              ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "My Card",
+                    style: AppStyles.f20w600(context)
+                        .copyWith(color: AppColors.secondColor),
+                  ),
+                  const SizedBox(height: 10),
+                  MyCardsPageView(pageController: pageController),
+                  const SizedBox(height: 10),
+                  DotsList(currentPageIndex: currentPageIndex),
+                  const SizedBox(height: 10),
+                  Divider(
+                    height: 2,
+                  ),
+                  const SizedBox(height: 10),
+                  TransactionHistory()
+                ],
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        IncomeSection()
-      ],
+          SizedBox(
+            height: 20,
+          ),
+          IncomeSection()
+        ],
+      ),
     );
   }
 }

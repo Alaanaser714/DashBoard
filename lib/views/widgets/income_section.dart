@@ -1,3 +1,4 @@
+import 'package:dashboard/views/widgets/income_section_body.dart';
 import 'package:flutter/material.dart';
 
 import 'income_header.dart';
@@ -17,6 +18,7 @@ class IncomeSection extends StatelessWidget {
         child: Column(
           children: [
             IncomeHeader(),
+            IncomSectionBody(),
           ],
         ),
       ),
