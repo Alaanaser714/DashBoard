@@ -34,8 +34,11 @@ class LatestTransactionlistView extends StatelessWidget {
           itemCount: userinfoList.length,
           itemBuilder: (context, index) {
             return IntrinsicWidth(
-              child: UserInfoItem(
-                userInfoModel: userinfoList[index],
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: UserInfoItem(
+                  userInfoModel: userinfoList[index],
+                ),
               ),
             );
           }),
