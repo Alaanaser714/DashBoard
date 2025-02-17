@@ -8,14 +8,16 @@ class AllExpensesAndVoiceWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AllExpensesWidget(),
-        SizedBox(
-          height: 20,
-        ),
-        QuickVoiceWidget(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          AllExpensesWidget(),
+          SizedBox(
+            height: 20,
+          ),
+          QuickVoiceWidget(),
+        ],
+      ),
     );
   }
 }
