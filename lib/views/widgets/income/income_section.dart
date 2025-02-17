@@ -18,6 +18,9 @@ class IncomeSection extends StatelessWidget {
         child: Column(
           children: [
             IncomeHeader(),
+            SizedBox(
+              height: 20,
+            ),
             IncomSectionBody(),
           ],
         ),
