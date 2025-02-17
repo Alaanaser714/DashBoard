@@ -1,6 +1,5 @@
 import 'dart:async';
-import 'package:dashboard/views/widgets/all_expenses/all_expenses_header_item.dart';
-import 'package:dashboard/views/widgets/income/income_header.dart';
+
 import 'package:flutter/material.dart';
 import 'package:dashboard/core/utils/app_colors.dart';
 import 'package:dashboard/views/widgets/dots_list.dart';
@@ -57,32 +56,35 @@ class _MyCardSectionState extends State<MyCardSection> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "My Card",
-                    style: AppStyles.f20w600(context)
-                        .copyWith(color: AppColors.secondColor),
-                  ),
-                  const SizedBox(height: 10),
-                  MyCardsPageView(pageController: pageController),
-                  const SizedBox(height: 10),
-                  DotsList(currentPageIndex: currentPageIndex),
-                  const SizedBox(height: 10),
-                  Divider(
-                    height: 2,
-                  ),
-                  const SizedBox(height: 10),
-                  TransactionHistory()
-                ],
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "My Card",
+                      style: AppStyles.f20w600(context)
+                          .copyWith(color: AppColors.secondColor),
+                    ),
+                    const SizedBox(height: 10),
+                    MyCardsPageView(pageController: pageController),
+                    const SizedBox(height: 10),
+                    DotsList(currentPageIndex: currentPageIndex),
+                    const SizedBox(height: 10),
+                    Divider(
+                      height: 2,
+                    ),
+                    const SizedBox(height: 10),
+                    TransactionHistory()
+                  ],
+                ),
               ),
             ),
           ),

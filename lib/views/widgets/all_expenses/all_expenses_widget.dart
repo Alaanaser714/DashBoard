@@ -8,26 +8,28 @@ class AllExpensesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 25,
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
         ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          AllExpensesHeaderItem(),
-          SizedBox(
-            height: 28,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 25,
           ),
-          AllExpensesItemsList(),
-        ]),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            AllExpensesHeaderItem(),
+            SizedBox(
+              height: 28,
+            ),
+            AllExpensesItemsList(),
+          ]),
+        ),
       ),
     );
   }
 }
-
-
