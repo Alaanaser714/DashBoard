@@ -1,3 +1,4 @@
+import 'package:dashboard/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class AppFunction {
@@ -13,12 +14,12 @@ class AppFunction {
 
   static double getScaleFactor(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (width < 600) {
-      return width / 400;
-    } else if (width < 900) {
-      return width / 700;
-    } else {
+    if (width < SizeConfig.tablet) {
+      return width / 550;
+    } else if (width < SizeConfig.desktop) {
       return width / 1000;
+    } else {
+      return width / 1100;
     }
   }
 }
