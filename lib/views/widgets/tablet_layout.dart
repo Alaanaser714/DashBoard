@@ -22,7 +22,6 @@ class TabletLayout extends StatelessWidget {
             flex: 2,
             child: AllExpensesAndVoiceWidgets(),
           ),
-          
         ],
       ),
     );

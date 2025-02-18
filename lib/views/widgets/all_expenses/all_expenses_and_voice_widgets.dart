@@ -9,6 +9,7 @@ class AllExpensesAndVoiceWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -17,6 +18,7 @@ class AllExpensesAndVoiceWidgets extends StatelessWidget {
             height: 20,
           ),
           QuickVoiceWidget(),
+          width < 1300 ? MyCardSection() : SizedBox()
         ],
       ),
     );
