@@ -14,12 +14,12 @@ class AppFunction {
 
   static double getScaleFactor(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (width < SizeConfig.tablet) {
-      return width / 550;
-    } else if (width < SizeConfig.desktop) {
-      return width / 1000;
+    if (width < SizeConfig.tablet) { //600
+      return width / 550; //400
+    } else if (width < SizeConfig.desktop) {  //900
+      return width / 1000; //700
     } else {
-      return width / 1100;
+      return width / 1100; //1000
     }
   }
 }
