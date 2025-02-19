@@ -22,9 +22,11 @@ class CustomTextField extends StatelessWidget {
             style: AppStyles.f16w500(context).copyWith(
               color: AppColors.secondColor,
             )),
+        SizedBox(
+          height: 10,
+        ),
         TextField(
           decoration: InputDecoration(
-            
             hintText: hintText,
             filled: true,
             fillColor: Color(0xffFAFAFA),

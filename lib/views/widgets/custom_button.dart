@@ -22,10 +22,12 @@ class CustomButton extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20.0),
-        child: Text(
-          text,
-          style: AppStyles.f16w500(context).copyWith(
-            color: isActive ? Colors.white : AppColors.primaryColor,
+        child: FittedBox(
+          child: Text(
+            text,
+            style: AppStyles.f16w500(context).copyWith(
+              color: isActive ? Colors.white : AppColors.primaryColor,
+            ),
           ),
         ),
       ),

@@ -38,22 +38,23 @@ class ActiveAllExpensesItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFAFAFA).withOpacity(.10),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          )),
-                      child: Center(
+                  FittedBox(
+                    child: Container(
+                        decoration: BoxDecoration(
+                            color: Color(0xffFAFAFA).withOpacity(.10),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            )),
+                        child: Center(
                           child: SvgPicture.asset(
-                        colorFilter: ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
-                        ),
-                        allExpensesModel.image,
-                      ))),
+                            colorFilter: ColorFilter.mode(
+                              Colors.white,
+                              BlendMode.srcIn,
+                            ),
+                            allExpensesModel.image,
+                          ),
+                        )),
+                  ),
                   Transform.rotate(
                       angle: -3.14159,
                       child: Icon(
