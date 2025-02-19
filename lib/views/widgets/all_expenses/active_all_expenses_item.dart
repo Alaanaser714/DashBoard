@@ -17,78 +17,73 @@ class ActiveAllExpensesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Container(
-        decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: Color(0xffF1F1F1),
-              width: 1,
-            )),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 14,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  FittedBox(
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: Color(0xffFAFAFA).withOpacity(.10),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            )),
-                        child: Center(
-                          child: SvgPicture.asset(
-                            colorFilter: ColorFilter.mode(
-                              Colors.white,
-                              BlendMode.srcIn,
-                            ),
-                            allExpensesModel.image,
+    return Container(
+      decoration: BoxDecoration(
+          color: AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: Color(0xffF1F1F1),
+            width: 1,
+          )),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FittedBox(
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xffFAFAFA).withOpacity(.10),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          )),
+                      child: Center(
+                        child: SvgPicture.asset(
+                          colorFilter: ColorFilter.mode(
+                            Colors.white,
+                            BlendMode.srcIn,
                           ),
-                        )),
-                  ),
-                  Transform.rotate(
-                      angle: -3.14159,
-                      child: Icon(
-                        color: Colors.white,
-                        Icons.arrow_back_ios_new_outlined,
-                      ))
-                ],
-              ),
-              Text(
-                allExpensesModel.title,
-                style: AppStyles.f16w600(context).copyWith(
-                  color: Colors.white,
+                          allExpensesModel.image,
+                        ),
+                      )),
                 ),
+                Spacer(),
+                Transform.rotate(
+                    angle: -3.14159,
+                    child: Icon(
+                      color: Colors.white,
+                      Icons.arrow_back_ios_new_outlined,
+                    ))
+              ],
+            ),
+            Text(
+              allExpensesModel.title,
+              style: AppStyles.f16w600(context).copyWith(
+                color: Colors.white,
               ),
-              SizedBox(
-                height: 8,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Text(
+              allExpensesModel.date,
+              style: AppStyles.f14w400(context).copyWith(
+                color: Colors.white,
               ),
-              Text(
-                allExpensesModel.date,
-                style: AppStyles.f14w400(context).copyWith(
-                  color: Colors.white,
-                ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Text(
+              allExpensesModel.price,
+              style: AppStyles.f24w600(context).copyWith(
+                color: Colors.white,
               ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                allExpensesModel.price,
-                style: AppStyles.f24w600(context).copyWith(
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

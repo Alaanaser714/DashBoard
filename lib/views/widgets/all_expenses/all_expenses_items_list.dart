@@ -45,9 +45,12 @@ class _AllExpensesItemsListState extends State<AllExpensesItemsList> {
                       isSelected = allexpenesList.indexOf(e);
                     });
                   },
-                  child: AllExpensesItem(
-                    allExpensesModel: e,
-                    isActive: isSelected == allexpenesList.indexOf(e),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: AllExpensesItem(
+                      allExpensesModel: e,
+                      isActive: isSelected == allexpenesList.indexOf(e),
+                    ),
                   ),
                 ),
               ))
